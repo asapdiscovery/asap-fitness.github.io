@@ -4,6 +4,7 @@ node_modules/
 # VitePress build output
 dist/
 .vitepress/dist/
+.vitepress/cache/
 
 # macOS folder attributes
 .DS_Store
