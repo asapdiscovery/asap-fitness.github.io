@@ -1,0 +1,13 @@
+# Dependency directories
+node_modules/
+
+# VitePress build output
+dist/
+.vitepress/dist/
+
+# macOS folder attributes
+.DS_Store
+
+# Environment variables
+.env
+.env.*
