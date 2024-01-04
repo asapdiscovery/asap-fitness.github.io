@@ -7,27 +7,27 @@ hero:
 
 features:
   - title: SARS-CoV-2
-    link: /about
+    link: /sars2/
     linkText: Spike
     icon:
       src: /structures/sars.png
   - title: HIV
-    link: /about
+    link: /hiv/
     linkText: Env
     icon:
       src: /structures//hiv.png
   - title: Influenza
-    link: /about
+    link: /influenza/
     linkText: HA
     icon:
       src: /structures//flu.png
   - title: Lassa
-    link: /about
+    link: /lassa/
     linkText: GPC
     icon:
       src: /structures//lassa.png
   - title: Nipah
-    link: /about
+    link: /nipah/
     linkText: G
     icon:
       src: /structures/nipah.png
