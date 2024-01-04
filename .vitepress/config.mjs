@@ -1,28 +1,30 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from "vitepress";
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "DMS VEP",
-  description: "Deep mutational scanning (DMS) of viral entry proteins (VEPs)",
+  description:
+    "A repository of deep mutational scanning (DMS) experiments of viral entry proteins (VEPs)",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
+    logo: "/logo.svg",
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    siteTitle: false,
+
+    nav: [{ text: "About", link: "/about" }],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
-  }
-})
+      {
+        icon: "github",
+        link: "https://github.com/dms-vep",
+      },
+      {
+        icon: "twitter",
+        link: "https://twitter.com/jbloom_lab?lang=en",
+      },
+    ],
+
+    footer: {
+      message: "Released under the MIT License.",
+      copyright: "Copyright © 2024-present Jesse Bloom",
+    },
+  },
+});

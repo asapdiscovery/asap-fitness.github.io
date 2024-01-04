@@ -94,8 +94,10 @@
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
-    #bd34fe 30%,
-    #41d1ff
+    #386AB3 20%,
+    #39B6B1 30%,
+    #C04250 70%,
+    #DDA059 90%   
   );
 
   --vp-home-hero-image-background-image: linear-gradient(
@@ -137,3 +139,13 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/**
+ * Custom Global CSS
+ * -------------------------------------------------------------------------- */
+
+/* Center the context of the feature element */
+.VPFeature .box {
+  display: flex; /* Enable Flexbox */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Align items to the start of the cross axis */
+}

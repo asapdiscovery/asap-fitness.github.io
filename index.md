@@ -1,25 +1,34 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
   name: "DMS VEP"
-  text: "Deep mutational scanning (DMS) of viral entry proteins (VEPs)"
-  tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+  tagline: An archive of deep mutational scanning (DMS) experiments of viral entry proteins (VEPs)
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: SARS-CoV-2
+    link: /about
+    linkText: Spike
+    icon:
+      src: /structures/sars.png
+  - title: HIV
+    link: /about
+    linkText: Env
+    icon:
+      src: /structures//hiv.png
+  - title: Influenza
+    link: /about
+    linkText: HA
+    icon:
+      src: /structures//flu.png
+  - title: Lassa
+    link: /about
+    linkText: GPC
+    icon:
+      src: /structures//lassa.png
+  - title: Nipah
+    link: /about
+    linkText: G
+    icon:
+      src: /structures/nipah.png
 ---
-
