@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
   title: "DMS VEP",
+  head: [["link", { rel: "icon", href: "/logo.svg" }]],
   description:
     "A repository of deep mutational scanning (DMS) experiments of viral entry proteins (VEPs)",
   themeConfig: {
