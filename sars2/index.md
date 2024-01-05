@@ -4,4 +4,6 @@ layout: doc
 
 # SARS-CoV-2
 
-- [SARS-CoV-2 Delta DMS](./delta-spike-REGN10933)
+Here's a little example description of the experiment listed below...
+
+<BlogIndex></BlogIndex>

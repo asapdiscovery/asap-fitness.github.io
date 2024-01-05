@@ -10,7 +10,8 @@ export default {
     props: {
         specUrl: {
             type: String,
-            required: true,        }
+            required: true,
+        }
     },
 
     mounted() {
@@ -27,11 +28,11 @@ export default {
                 if (url.endsWith('.html')) {
                     const htmlContent = await response.text();
                     spec = await parseVegaSpecFromHTML(htmlContent);
-                } 
+                }
                 // Check if URL ends with '.json'
                 else if (url.endsWith('.json')) {
                     spec = await response.json();
-                } 
+                }
                 else {
                     console.error('Unsupported file format');
                     return;
@@ -45,8 +46,8 @@ export default {
 
         renderChart(spec) {
             vegaEmbed(this.$refs.vegaContainer, spec, {
-                renderer: 'canvas', 
-                vega, 
+                renderer: 'canvas',
+                vega,
                 vegaLite,
                 actions: false,
             }).then((result) => {
