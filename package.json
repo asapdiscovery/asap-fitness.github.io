@@ -7,5 +7,10 @@
   "devDependencies": {
     "vitepress": "^1.0.0-rc.34",
     "vue": "^3.2.36"
+  },
+  "dependencies": {
+    "vega": "^5.27.0",
+    "vega-embed": "^6.24.0",
+    "vega-lite": "^5.16.3"
   }
 }

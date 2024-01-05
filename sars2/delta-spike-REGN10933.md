@@ -15,6 +15,8 @@ Study by {{ $frontmatter.authors.join(', ') }}, et al. The pre-print for this st
 
 This page contains a summary of the analysis and links to important datasets. To see the code and full analysis, check out the <a v-bind:href="$frontmatter.github">GitHub repository</a>.
 
+<!-- START EDITING HERE -->
+
 ## Analysis Overview
 
 This analysis was run using `Snakeamke`. Below is the rulegraph for the `Snakemake` workflow.
@@ -69,3 +71,5 @@ This analysis was run using `Snakeamke`. Below is the rulegraph for the `Snakema
 - [267C escape plot]()
 - [279C escape plot]()
 - [REGN10933 escape plot]()
+
+<Altair :spec-url="'https://dms-vep.github.io/SARS-CoV-2_Delta_spike_DMS_REGN10933/muteffects_latent_heatmap.html'"></Altair>

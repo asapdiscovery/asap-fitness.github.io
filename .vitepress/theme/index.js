@@ -2,6 +2,7 @@
 import { h } from "vue";
 import DefaultTheme from "vitepress/theme";
 import Contributors from "./Contributors.vue";
+import Altair from "./Altair.vue";
 import "./style.css";
 
 /** @type {import('vitepress').Theme} */
@@ -13,6 +14,6 @@ export default {
     });
   },
   enhanceApp({ app, router, siteData }) {
-    // ...
+    app.component("Altair", Altair);
   },
 };
