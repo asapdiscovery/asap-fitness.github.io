@@ -12,3 +12,6 @@ dist/
 # Environment variables
 .env
 .env.*
+
+# Vscode config
+.vscode/

@@ -2,7 +2,16 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
   title: "DMS VEP",
-  head: [["link", { rel: "icon", href: "/logo.svg" }]],
+  head: [
+    ["link", { rel: "icon", href: "/logo.svg" }],
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://unpkg.com/tailwindcss@2.0.4/dist/tailwind.min.css",
+      },
+    ],
+  ],
   description:
     "A repository of deep mutational scanning (DMS) experiments of viral entry proteins (VEPs)",
   themeConfig: {

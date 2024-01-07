@@ -1,7 +1,11 @@
 <script>
+import DateComponent from './Date.vue'
 import { data as postsData } from './posts.data.js'
 
 export default {
+    components: {
+        DateComponent
+    },
     computed: {
         filteredPosts() {
             // Extract the current directory name from the window location
@@ -23,10 +27,52 @@ export default {
 </script>
 
 <template>
-    <h2>Experiment Index</h2>
-    <ul>
-        <li v-for="post in filteredPosts" :key="post.id">
-            <a :href="post.url">{{ post.frontmatter.title }}</a>
-        </li>
-    </ul>
+    <div class="divide-y divide-gray-200 dark:divide-slate-200/5">
+        <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
+            <li class="py-12" v-for="(post, index) in posts" :key="index">
+                <article class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
+                    <DateComponent :dateString="post.date" />
+                    <div class="space-y-5 xl:col-span-3">
+                        <div class="space-y-6">
+                            <h2 class="text-2xl leading-8 font-bold tracking-tight">
+                                <a class="text-gray-900 dark:text-white" :href="post.url">{{
+                                    post.title
+                                }}</a>
+                            </h2>
+                            <div v-if="post.subtext"
+                                class="prose dark:prose-invert max-w-none text-gray-500 dark:text-gray-300"
+                                v-html="post.subtext"></div>
+                        </div>
+                        <div class="text-base leading-6 font-medium">
+                            <a class="link" aria-label="read more" :href="post.url">Read more →</a>
+                        </div>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </div>
 </template>
+
+<style scoped>
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+h2 {
+    margin: 0;
+    border-top: none;
+    padding-top: 0;
+}
+
+h2 a {
+    color: black;
+}
+
+.link {
+    color: darkblue;
+}
+</style>
