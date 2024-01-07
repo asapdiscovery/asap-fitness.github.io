@@ -19,7 +19,23 @@ export default defineConfig({
 
     siteTitle: false,
 
-    nav: [{ text: "About", link: "/about" }],
+    nav: [
+      {
+        text: "About",
+        items: [
+          {
+            text: "",
+            items: [{ text: "About", link: "/about" }],
+          },
+          {
+            text: "Lab Website",
+            link: "https://research.fredhutch.org/bloom/en.html",
+            target: "_blank",
+          },
+        ],
+      },
+      { text: "Contributing", link: "/contributing" },
+    ],
 
     socialLinks: [
       {
