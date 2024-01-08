@@ -35,13 +35,11 @@ export default {
                     <div class="space-y-5 xl:col-span-3">
                         <div class="space-y-6">
                             <h2 class="text-2xl leading-8 font-bold tracking-tight">
-                                <a class="text-gray-900 dark:text-white" :href="post.url">{{
+                                <a :href="post.url">{{
                                     post.title
                                 }}</a>
                             </h2>
-                            <div v-if="post.subtext"
-                                class="prose dark:prose-invert max-w-none text-gray-500 dark:text-gray-300"
-                                v-html="post.subtext"></div>
+                            <div v-if="post.subtext" class="prose dark:prose-invert max-w-none" v-html="post.subtext"></div>
                         </div>
                         <div class="text-base leading-6 font-medium">
                             <a class="link" aria-label="read more" :href="post.url">Read more →</a>
@@ -58,6 +56,14 @@ a {
     text-decoration: none;
 }
 
+.prose a {
+    color: var(--vp-c-text-2);
+}
+
+.date {
+    color: var(--vp-c-text-2);
+}
+
 li {
     list-style-type: none;
 }
@@ -69,10 +75,6 @@ h2 {
 }
 
 h2 a {
-    color: black;
-}
-
-.link {
-    color: darkblue;
+    color: var(--vp-c-text-1);
 }
 </style>

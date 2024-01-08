@@ -28,7 +28,7 @@ features:
       src: /structures//lassa.png
   - title: Nipah
     link: /nipah/
-    linkText: G
+    linkText: RBP
     icon:
       src: /structures/nipah.png
 ---

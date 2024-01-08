@@ -29,7 +29,7 @@ const formattedDate = computed(() => {
 <template>
     <dl>
         <dt class="sr-only">Published on</dt>
-        <dd class="text-base leading-6 font-medium text-gray-500 dark:text-gray-300">
+        <dd class="date text-base leading-6 font-medium">
             <time :datetime="dateTime">{{ formattedDate }}</time>
         </dd>
     </dl>
