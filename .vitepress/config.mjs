@@ -28,6 +28,10 @@ export default defineConfig({
             items: [{ text: "About", link: "/about" }],
           },
           {
+            text: "Methodology",
+            link: "/methodology",
+          },
+          {
             text: "Lab Website",
             link: "https://research.fredhutch.org/bloom/en.html",
             target: "_blank",
