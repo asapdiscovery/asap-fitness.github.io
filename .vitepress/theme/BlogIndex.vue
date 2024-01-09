@@ -36,7 +36,7 @@ export default {
                 class="text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
                 {{ frontmatter.title }}
             </h1>
-            <p class="text-lg leading-7 text-gray-500 dark:text-white">
+            <p class="description text-lg leading-7 text-gray-500 dark:text-white">
                 {{ frontmatter.subtext }}
             </p>
         </div>
@@ -52,6 +52,11 @@ export default {
                                 }}</a>
                             </h2>
                             <div v-if="post.subtext" class="prose dark:prose-invert max-w-none" v-html="post.subtext"></div>
+                            <div v-if="post.keywords" class="keywords">
+                                <span><strong>Keywords: </strong></span>
+                                <span v-for="(keyword, kIndex) in post.keywords" :key="kIndex">{{ keyword }}<span
+                                        v-if="kIndex < post.keywords.length - 1">, </span></span>
+                            </div>
                         </div>
                         <div class="text-base leading-6 font-medium">
                             <a class="link" aria-label="read more" :href="post.url">Read more →</a>
@@ -85,6 +90,11 @@ h1 {
     line-height: 1;
     padding-top: 0;
     font-weight: 800;
+    color: var(--vp-c-text-1);
+}
+
+.description {
+    color: var(--vp-c-text-1);
 }
 
 h2 {
@@ -95,5 +105,10 @@ h2 {
 
 h2 a {
     color: var(--vp-c-text-1);
+}
+
+.keywords {
+    font-size: 0.875rem;
+    color: var(--vp-c-text-2);
 }
 </style>

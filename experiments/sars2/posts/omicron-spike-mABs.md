@@ -7,6 +7,11 @@ date: 2022-10-10
 github: https://github.com/dms-vep/SARS-CoV-2_Omicron_BA.1_spike_DMS_mAbs
 paper: https://doi.org/10.1016/j.cell.2023.02.001
 subtext: Here is another short description that describes what this experiment is about.
+keywords:
+    - Omicron
+    - BA.1
+    - Spike
+    - Lentiviral Pseudotyping
 ---
 
 
