@@ -1,6 +1,7 @@
 <script>
 import DateComponent from './Date.vue'
 import { data as postsData } from './posts.data.js'
+import { useData } from 'vitepress'
 
 export default {
     components: {
@@ -19,8 +20,10 @@ export default {
         }
     },
     data() {
+        const { frontmatter } = useData();
         return {
-            posts: postsData
+            posts: postsData,
+            frontmatter: frontmatter
         }
     },
 }
@@ -28,6 +31,15 @@ export default {
 
 <template>
     <div class="divide-y divide-gray-200 dark:divide-slate-200/5">
+        <div class="pt-6 pb-8 space-y-2 md:space-y-5">
+            <h1
+                class="text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+                {{ frontmatter.title }}
+            </h1>
+            <p class="text-lg leading-7 text-gray-500 dark:text-white">
+                {{ frontmatter.subtext }}
+            </p>
+        </div>
         <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
             <li class="py-12" v-for="(post, index) in posts" :key="index">
                 <article class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
@@ -66,6 +78,13 @@ a {
 
 li {
     list-style-type: none;
+}
+
+h1 {
+    font-size: 3.75rem;
+    line-height: 1;
+    padding-top: 0;
+    font-weight: 800;
 }
 
 h2 {
