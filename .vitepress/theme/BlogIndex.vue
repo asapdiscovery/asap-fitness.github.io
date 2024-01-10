@@ -1,33 +1,52 @@
 <script>
-import DateComponent from './Date.vue'
-import { data as postsData } from './posts.data.js'
-import { useData } from 'vitepress'
+import { ref, computed } from 'vue';
+import DateComponent from './Date.vue';
+import { data as postsData } from './posts.data.js';
+import { useData } from 'vitepress';
+import vSelect from "vue-select";
 
 export default {
     components: {
-        DateComponent
+        DateComponent,
+        vSelect
     },
-    computed: {
-        filteredPosts() {
-            // Extract the current directory name from the window location
+    setup() {
+        const { frontmatter } = useData();
+        const selectedKeywords = ref([]);
+
+        const allKeywords = computed(() => {
+            const keywords = new Set();
+            postsData.forEach(post => {
+                if (post.keywords) {
+                    post.keywords.forEach(keyword => keywords.add(keyword));
+                }
+            });
+            return Array.from(keywords);
+        });
+
+        const filteredPosts = computed(() => {
             const currentDirectory = window.location.pathname.split('/').slice(-2, -1)[0];
 
             return postsData.filter(post => {
-                // Extract the parent directory name from the post URL
                 const parentDirectory = new URL(post.url, location.href).pathname.split('/').slice(-3, -2)[0];
-                return parentDirectory === currentDirectory;
+                const isInCurrentDirectory = parentDirectory === currentDirectory;
+                const hasSelectedKeywords = selectedKeywords.value.length === 0 ||
+                    post.keywords?.some(keyword => selectedKeywords.value.includes(keyword));
+
+                return isInCurrentDirectory && hasSelectedKeywords;
             });
-        }
-    },
-    data() {
-        const { frontmatter } = useData();
+        });
+
         return {
-            posts: postsData,
-            frontmatter: frontmatter
-        }
-    },
+            frontmatter,
+            selectedKeywords,
+            allKeywords,
+            filteredPosts
+        };
+    }
 }
 </script>
+
 
 <template>
     <div class="divide-y divide-gray-200 dark:divide-slate-200/5">
@@ -39,9 +58,12 @@ export default {
             <p class="description text-lg leading-7 text-gray-500 dark:text-white">
                 {{ frontmatter.subtext }}
             </p>
+            <v-select v-model="selectedKeywords" :options="allKeywords" multiple
+                placeholder="Filter experiments by keywords">
+            </v-select>
         </div>
         <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
-            <li class="py-12" v-for="(post, index) in posts" :key="index">
+            <li class="py-12" v-for="(post, index) in filteredPosts" :key="index">
                 <article class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
                     <DateComponent :dateString="post.date" />
                     <div class="space-y-5 xl:col-span-3">
