@@ -1,8 +1,8 @@
 <script>
 import { ref, computed } from 'vue';
-import DateComponent from './Date.vue';
 import { data as postsData } from './posts.data.js';
 import { useData } from 'vitepress';
+import DateComponent from './Date.vue';
 import vSelect from "vue-select";
 
 export default {
@@ -132,5 +132,9 @@ h2 a {
 .keywords {
     font-size: 0.875rem;
     color: var(--vp-c-text-2);
+}
+
+::v-deep .vs__dropdown-menu {
+    background-color: var(--vp-c-bg);
 }
 </style>
