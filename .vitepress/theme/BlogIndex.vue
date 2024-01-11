@@ -3,14 +3,18 @@ import { ref, computed } from 'vue';
 import { data as postsData } from './posts.data.js';
 import { useData } from 'vitepress';
 import DateComponent from './Date.vue';
-import vSelect from "vue-select";
 
 export default {
     components: {
         DateComponent,
-        vSelect
     },
-    setup() {
+    props: {
+        currentDirectory: {
+            type: String,
+            required: true
+        }
+    },
+    setup(props) {
         const { frontmatter } = useData();
         const selectedKeywords = ref([]);
 
@@ -25,10 +29,11 @@ export default {
         });
 
         const filteredPosts = computed(() => {
-            const currentDirectory = window.location.pathname.split('/').slice(-2, -1)[0];
+            const currentDirectory = props.currentDirectory;
+            console.log(currentDirectory);
 
             return postsData.filter(post => {
-                const parentDirectory = new URL(post.url, location.href).pathname.split('/').slice(-3, -2)[0];
+                const parentDirectory = post.url.split('/').slice(-3, -2)[0];
                 const isInCurrentDirectory = parentDirectory === currentDirectory;
                 const hasSelectedKeywords = selectedKeywords.value.length === 0 ||
                     post.keywords?.some(keyword => selectedKeywords.value.includes(keyword));
@@ -41,7 +46,8 @@ export default {
             frontmatter,
             selectedKeywords,
             allKeywords,
-            filteredPosts
+            filteredPosts,
+            currentDirectory: props.currentDirectory
         };
     }
 }
@@ -134,7 +140,7 @@ h2 a {
     color: var(--vp-c-text-2);
 }
 
-::v-deep .vs__dropdown-menu {
+:deep(.vs__dropdown-menu) {
     background-color: var(--vp-c-bg);
 }
 </style>
