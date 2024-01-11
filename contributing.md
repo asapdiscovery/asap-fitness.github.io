@@ -1,16 +1,16 @@
 # Contributing
 
-[`dms-vep.github.io`](dms-vep.github.io) is a repository for deep mutational scanning (DMS) studies with a focus on viral entry proteins (VEPs). The site contains a series of write-ups on individual deep mutational scanning experiments for a variety of viruses and conditions. This guide contains instructions for how to contribute your experimental write-ups.
+[`dms-vep.org`](https://dms-vep.org) is a repository for deep mutational scanning (DMS) studies with a focus on viral entry proteins (VEPs). The site contains a series of write-ups on individual deep mutational scanning experiments for a variety of viruses and conditions. This guide contains instructions for how to contribute your experimental write-ups.
 
 There are three parts to this guide:
 
 1. [Getting Started](#getting-started): How to add a new write-up and view the updated website.
 2. [Writing Markdown](#writing-markdown): How to take advantage of the VitePress markdown interpreter.
-3. [Style Guide](style-guide): How to structure your experimental write-ups.
+3. [Style Guide](#style-guide): How to structure your experimental write-ups.
 
 ## Getting Started
 
-[`dms-vep.github.io`](dms-vep.github.io) is based on the static site generator [VitePress](https://vitepress.dev/) with some additional custom components written in [Vue](https://vuejs.org/). This allows you to create fully functional web pages using [Markdown](https://www.markdownguide.org/) documents. To add a new page to the site, you simply create a markdown document in the correct directory and make a pull request to [the website repository on GitHub](https://github.com/dms-vep/dms-vep.github.io). Below are detailed instructions on how to do this.
+[`dms-vep.org`](https://dms-vep.org) is based on the static site generator [VitePress](https://vitepress.dev/) with some additional custom components written in [Vue](https://vuejs.org/). This allows you to create fully functional web pages using [Markdown](https://www.markdownguide.org/) documents. To add a new page to the site, you simply create a markdown document in the correct directory and make a pull request to [the website repository on GitHub](https://github.com/dms-vep/dms-vep.github.io). Below are detailed instructions on how to do this.
 
 ### Setting up to contribute
 
@@ -40,7 +40,7 @@ With these installed, you can now boot up a live preview of your local version o
 npm run docs:dev
 ```
 
-Now, there will be a local version of the website running at <http://localhost:5173>. Visit this URL in your browser to see a preview of the site.
+Now, there will be a local version of the website running at `http://localhost:5173`. Visit this URL in your browser to see a preview of the site.
 
 ### Structure of the repository
 

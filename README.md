@@ -17,4 +17,8 @@ This website is created using the static site generator [VitePress](https://vite
 npm run docs:dev
 ```
 
-The dev server should now be running at http://localhost:5173. Visit this URL in your browser to see a preview of the site.
+The dev server should now be running at `http://localhost:5173`. Visit this URL in your browser to see a preview of the site.
+
+## Deploying
+
+The website is hosted on GitHub pages via a specific `gh-pages` branch and builds are automated using GitHub Actions via the deployment script `/.github/workflows/deploy.yml`. The website will build on `pull requests` and `pushes` to the `main` branch.
