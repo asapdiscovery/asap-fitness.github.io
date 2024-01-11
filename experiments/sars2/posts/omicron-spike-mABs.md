@@ -20,3 +20,7 @@ keywords:
 Study by {{ $frontmatter.author.join(', ') }}, et al. The pre-print for this study is <a v-bind:href="$frontmatter.paper">here</a>.
 
 This page contains a summary of the analysis and links to important datasets. To see the code and full analysis, check out the <a v-bind:href="$frontmatter.github">GitHub repository</a>.
+
+---
+
+In progress...
