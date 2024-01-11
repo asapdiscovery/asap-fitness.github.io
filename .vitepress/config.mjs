@@ -58,4 +58,10 @@ export default defineConfig({
       copyright: "Copyright © 2024-present Jesse Bloom",
     },
   },
+  // Fixes an issue with vue-select being treated as CJS not ESM
+  vite: {
+    ssr: {
+      noExternal: ["vue-select"],
+    },
+  },
 });
