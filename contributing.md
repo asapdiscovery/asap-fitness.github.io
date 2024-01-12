@@ -51,7 +51,6 @@ The file structure of this website is as follows:
 ├── README.md
 ├── about.md
 ├── contributing.md
-├── contributors.json
 ├── experiments
 ├── index.md
 ├── methodology.md
@@ -109,7 +108,7 @@ Then your write-up goes here...
 
 Ensure that **every write-up contains the headers listed above**. These pieces of metadata will appear in the index of experiments for a given virus. The `title` will appear as the title, the `subtext` will appear as a description below the title, and the `keywords` are used to filter the write-ups listed in the index.
 
-Finally, if this is your first time contributing to `dms-vep.github.io`, make sure to update the `contributors.json` with your name and a link to a photo:
+Finally, if this is your first time contributing to `dms-vep.github.io`, make sure to update the `public/contributors.json` file with your name and a link to a photo:
 
 ```json
 [
