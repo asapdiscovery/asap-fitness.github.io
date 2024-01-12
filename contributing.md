@@ -150,7 +150,7 @@ To add you're `Altair` plot simply use the following syntax:
 <Altair :spec-url="'https://raw.githubusercontent.com/dms-vep/SARS-CoV-2_Delta_spike_DMS_REGN10933/main/docs/REGN10933_escape_plot.html'"></Altair>
 ```
 
-Where the `:spec-url` points to either a `JSON` or `HTML` file exported from `Altair`.
+Where the `:spec-url` points to either a `JSON` or `HTML` file exported from `Altair`. It's **key** that this file comes from GitHub, and that the URL points to the **raw** data (i.e. the URL starts with `https://raw.githubusercontent`).
 
 The result will look something like this:
 
@@ -158,7 +158,7 @@ The result will look something like this:
 
 ### Adding views of `dms-viz`
 
-You can also include views of websites like `dms-viz.github.io` in your write-ups using `iframes`. These are `HTML` elements that take a URL and generate a view of that website within another website. You can use them like this: 
+You can also include views of websites like `dms-viz.github.io` in your write-ups using `iframes`. These are `HTML` elements that take a URL and generate a view of that website within another website. You can use them like this:
 
 ```md
 <iframe 
@@ -168,7 +168,7 @@ You can also include views of websites like `dms-viz.github.io` in your write-up
   style="border:0; margin: 0 auto; display: block; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 </iframe>
 ```
- 
+
 Which will result in a view of the URL provided to the `src` property of the `iframe`. The result looks like this:
 
 <iframe 
