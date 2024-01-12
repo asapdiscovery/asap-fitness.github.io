@@ -147,14 +147,14 @@ To add `Altair` plots, you'll need to use a custom syntax and provide a link to 
 To add you're `Altair` plot simply use the following syntax:
 
 ```md
-<Altair :spec-url="'https://dms-vep.github.io/SARS-CoV-2_Delta_spike_DMS_REGN10933/muteffects_latent_heatmap.html'"></Altair>
+<Altair :spec-url="'https://raw.githubusercontent.com/dms-vep/SARS-CoV-2_Delta_spike_DMS_REGN10933/main/docs/REGN10933_escape_plot.html'"></Altair>
 ```
 
 Where the `:spec-url` points to either a `JSON` or `HTML` file exported from `Altair`.
 
 The result will look something like this:
 
-<Altair :spec-url="'https://dms-vep.github.io/SARS-CoV-2_Delta_spike_DMS_REGN10933/muteffects_latent_heatmap.html'"></Altair>
+<Altair :spec-url="'https://raw.githubusercontent.com/dms-vep/SARS-CoV-2_Delta_spike_DMS_REGN10933/main/docs/REGN10933_escape_plot.html'"></Altair>
 
 ### Adding views of `dms-viz`
 
