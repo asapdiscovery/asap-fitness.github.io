@@ -21,11 +21,15 @@ git clone git@github.com:dms-vep/dms-vep.github.io.git
 cd dms-vep.github.io
 ```
 
-Now that you have the repository and you're in the `dms-vep.github.io` directory, you'll need to set up a few things if you want to view a live preview of the website with your local changes. You're going to need two pieces of software to do this: `Node.js` and `npm`. 
+Now that you have the repository and you're in the `dms-vep.github.io` directory, you'll need to set up a few things if you want to view a live preview of the website with your local changes. You're going to need two pieces of software to do this: `Node.js` and `npm`.
 
-`Node.js` is an environment that allows you to run Javascript code on your computer. `npm` is a package manager that contains the Javascript libraries necessary to create the website. The instructions for installing `Node` and `npm` depend on your operating system and personal preference. Follow the instructions [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). 
+::: tip
+It's highly recommended that you develop `dms-vep.org` on your local machine to avoid issues with url forwarding.
+:::
 
-To verify that `Node` and `npm` are installed, run: 
+`Node.js` is an environment that allows you to run Javascript code on your computer. `npm` is a package manager that contains the Javascript libraries necessary to create the website. The instructions for installing `Node` and `npm` depend on your operating system and personal preference. Follow the instructions [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+
+To verify that `Node` and `npm` are installed, run:
 
 ```bash
 node -v
@@ -34,7 +38,13 @@ npm -v
 
 You should see the node and npm versions that you installed on your computer.
 
-With these installed, you can now boot up a live preview of your local version of `dms-vep.github.io` on your browser. To do this, simply run: 
+If this is the first time you're contributing, you'll need to install all of the packages in `packages.json`. To do this, run the following command from within the repository:
+
+```bash
+npm install
+```
+
+With everything installed, you can now boot up a live preview of your local version of `dms-vep.github.io` on your browser. To do this, simply run: 
 
 ```bash
 npm run docs:dev
