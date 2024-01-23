@@ -23,8 +23,8 @@ cd dms-vep.github.io
 
 Now that you have the repository and you're in the `dms-vep.github.io` directory, you'll need to set up a few things if you want to view a live preview of the website with your local changes. You're going to need two pieces of software to do this: `Node.js` and `npm`.
 
-::: tip
-It's highly recommended that you develop `dms-vep.org` on your local machine to avoid issues with url forwarding.
+::: warning
+It's recommended that you develop `dms-vep.org` on your local machine (not a remote server) to avoid troubleshooting url forwarding.
 :::
 
 `Node.js` is an environment that allows you to run Javascript code on your computer. `npm` is a package manager that contains the Javascript libraries necessary to create the website. The instructions for installing `Node` and `npm` depend on your operating system and personal preference. Follow the instructions [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
