@@ -149,3 +149,19 @@
   justify-content: space-between; /* Space between items */
   align-items: center; /* Align items to the start of the cross axis */
 }
+
+/* Increase the max width of the content */
+@media (min-width: 1700px) {
+  .VPDoc:not(.has-sidebar) .content {
+    max-width: 1100px !important;
+  }
+
+  .VPDoc:not(.has-sidebar) .container {
+    max-width: 1500px !important;
+  }
+
+  .VPDoc.has-aside .content-container {
+    max-width: 100% !important;
+  }
+}
+

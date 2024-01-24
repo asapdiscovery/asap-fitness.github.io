@@ -6,7 +6,7 @@ author:
 date: 2023-11-13
 github: https://github.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS
 paper: https://www.biorxiv.org/content/10.1101/2023.11.13.566961v1
-subtext: Use this dataset for the most up to date analysis on the effects of mutations on ACE2 binding, XBB breakthrough sera escape and ACE2-mediated cell entryfor XBB.1.5 spike
+subtext: Use this dataset for the most up to date analysis on the effects of mutations on ACE2 binding, XBB breakthrough sera escape and ACE2-mediated cell entry for XBB.1.5 spike
 keywords:
     - XBB.1.5
     - Spike
@@ -16,14 +16,11 @@ keywords:
     - serum escape
 ---
 
-
 # {{ $frontmatter.title }}
 
 Study by {{ $frontmatter.author.join(', ') }}, et al. The pre-print for this study is <a v-bind:href="$frontmatter.paper">here</a>.
 
 This page contains a summary of the analysis and links to important datasets. To see the code and full analysis, check out the <a v-bind:href="$frontmatter.github">GitHub repository</a>.
-
----
 
 ## Effects of mutations to spike of SARS-CoV-2 XBB.1.5 on escape from serum antibodies, spike-mediated cell entry, and ACE2 binding
 
@@ -49,4 +46,3 @@ Heatmaps for individual sera escape can be found here:
 Interactive heatmap that shows only monomeric ACE2 binding data is shown below.  
 
 <Altair :spec-url="'https://raw.githubusercontent.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS/main/docs/htmls/monomeric_ACE2_mut_effect.html'"></Altair>
-
