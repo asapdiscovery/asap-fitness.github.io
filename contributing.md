@@ -89,6 +89,8 @@ Any file ending `*.md` is converted to a page on the site. Individual experiment
            └── omicron-spike-mABs.md
 ```
 
+The landing page for a given virus is located at `experiments/<virus>/index.md`. Editing the contents of this file will determine the content of the landing page.
+
 Experiments for a given viral protein are located in a corresponding viral subdirectory underneath another directory called `posts/`. The markdown files in the `experiments/<virus>/posts/` directory contain the write-ups for each DMS experiment.
 
 ### Adding your experiments
@@ -132,6 +134,24 @@ Finally, if this is your first time contributing to `dms-vep.github.io`, make su
     },
     ...
 ```
+
+### Updating the landing page
+
+You can also update the landing page for a virus with links to the most recent datasets, specific background information and more. To edit the content of the landing page, edit the `experiments/<virus>/index.md` file for your virus. Similar to adding a new post, the content of the page is written fully in markdown with a `YAML` header that determines the properties of the page. For example, here's the header for SARS-CoV-2:
+
+```md
+---
+layout: doc
+aside: false
+dir: 'sars2'
+title: SARS-CoV-2
+subtext: Below are deep mutational scanning experiments of the SARS-CoV-2 Spike protein. See the details below for the best datasets for different research questions.
+---
+```
+
+Ensure that the directory name (`dir`) matches the name of the parent directory of `index.md`. The only parts of this header that you should edit are the `title` and the `subtext`.
+
+In addition to the header and the markdown, there are two other elements on the page. At the start of the page, there is a `<Header/>` element that creates the title of the page. At the bottom of the page, there is an `<Experiments/>` element that shows an archive of every experiment for a virus. Every landing page should have these two elements. See the landing page of [SARS-CoV-2](https://raw.githubusercontent.com/dms-vep/dms-vep.github.io/main/experiments/sars2/index.md) as an example.
 
 ## Writing Markdown
 
