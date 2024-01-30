@@ -1,4 +1,4 @@
-# dms-vep.github.io
+# [dms-vep.org](https://dms-vep.org/)
 
 ## Developing
 
