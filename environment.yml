@@ -1,0 +1,5 @@
+name: dms-vep.org
+channels:
+  - conda-forge
+dependencies:
+  - nodejs
