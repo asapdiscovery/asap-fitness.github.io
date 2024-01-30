@@ -135,9 +135,9 @@ Finally, if this is your first time contributing to `dms-vep.github.io`, make su
     ...
 ```
 
-### Updating the landing page
+### Updating the landing page for a protein
 
-You can also update the landing page for a virus with links to the most recent datasets, specific background information and more. To edit the content of the landing page, edit the `experiments/<virus>/index.md` file for your virus. Similar to adding a new post, the content of the page is written fully in markdown with a `YAML` header that determines the properties of the page. For example, here's the header for SARS-CoV-2:
+You can also update the landing page for a viral protein with links to the most recent datasets, specific background information, highlighted datasets, and more. To edit the content of the landing page, edit the `experiments/<virus>/index.md` file for your viral protein. Similar to adding a new post, the content of the page is written fully in markdown with a `YAML` header that determines the properties of the page. For example, here's the page for SARS-CoV-2:
 
 ```md
 ---
@@ -146,12 +146,79 @@ aside: false
 dir: 'sars2'
 title: SARS-CoV-2
 subtext: Below are deep mutational scanning experiments of the SARS-CoV-2 Spike protein. See the details below for the best datasets for different research questions.
+pins:
+  - title: ACE2 Binding affinity
+    link: /experiments/sars2/posts/delta-spike-REGN10933
+    details: Here is the best data to checkout if you're interested in ACE2 Binding affinity
+    linkText: Check it out!
+  - title: Monoclonal Antibody Escape
+    details: Here is a guide for monoclonal antibodies mapped against the most current strain
+    link: /experiments/sars2/posts/XBB.1.5_ACE2_binding_serum_escape_cell_entry
+    linkText: Check it out!
+  - title: Serum Escape
+    details: Here is a guide to human serum escape mapped against the most current strain
+    link: /experiments/sars2/posts/XBB.1.5_ACE2_binding_serum_escape_cell_entry
+    linkText: Check it out!
+---
+
+<Header :title="$frontmatter.title" :description="$frontmatter.subtext" /> 
+
+<PinnedExperiments />
+
+<!-- Edit below -->
+...
+<!-- Stop editing -->
+
+<Experiments :currentDirectory="$frontmatter.dir" />
+
+```
+
+When creating a new landing page for a viral protein, use this as the template. Your custom content is added in two places. First, you can customize the `YAML` frontmatter:
+
+```md
+---
+layout: doc
+aside: false
+dir: 'sars2'
+title: SARS-CoV-2
+subtext: Below are deep mutational scanning experiments of the SARS-CoV-2 Spike protein. See the details below for the best datasets for different research questions.
+pins:
+  - title: ACE2 Binding affinity
+    link: /experiments/sars2/posts/delta-spike-REGN10933
+    details: Here is the best data to checkout if you're interested in ACE2 Binding affinity
+    linkText: Check it out!
+  - title: Monoclonal Antibody Escape
+    details: Here is a guide for monoclonal antibodies mapped against the most current strain
+    link: /experiments/sars2/posts/XBB.1.5_ACE2_binding_serum_escape_cell_entry
+    linkText: Check it out!
+  - title: Serum Escape
+    details: Here is a guide to human serum escape mapped against the most current strain
+    link: /experiments/sars2/posts/XBB.1.5_ACE2_binding_serum_escape_cell_entry
+    linkText: Check it out!
 ---
 ```
 
-Ensure that the directory name (`dir`) matches the name of the parent directory of `index.md`. The only parts of this header that you should edit are the `title` and the `subtext`.
+Make sure to follow these instructions.
 
-In addition to the header and the markdown, there are two other elements on the page. At the start of the page, there is a `<Header/>` element that creates the title of the page. At the bottom of the page, there is an `<Experiments/>` element that shows an archive of every experiment for a virus. Every landing page should have these two elements. See the landing page of [SARS-CoV-2](https://raw.githubusercontent.com/dms-vep/dms-vep.github.io/main/experiments/sars2/index.md) as an example.
+- Please don't edit the values of `layout` or `aside`.
+- Ensure that the value of `dir` matches the name of the parent directory of `index.md`.
+- The value of `title` will appear as a header at the top of the page.
+- The value of `subtext` will show up as a short description below the `title`.
+- You can 'pin' specific datasets at the top of the page using the `pins` key. Please provide a short `title` and a `link` to the post that you're pinning. You can also provide a short description with the `details` key. See the SARS-CoV-2 Spike [landing page](experiments/sars2/index.md) for an example of what this looks like.
+
+You can also edit the landing page of a virus by adding some markdown to the page just like you would for a normal experimental post. To do this, add your markdown content between the comments that indicate where you should edit:
+
+```md
+<Header :title="$frontmatter.title" :description="$frontmatter.subtext" /> 
+
+<PinnedExperiments />
+
+<!-- Edit below -->
+Add your custom content here!
+<!-- Stop editing -->
+
+<Experiments :currentDirectory="$frontmatter.dir" />
+```
 
 ## Writing Markdown
 

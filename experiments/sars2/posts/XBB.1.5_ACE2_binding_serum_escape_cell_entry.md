@@ -1,5 +1,6 @@
 ---
 title: 'Effects of mutations in XBB.1.5 spike on ACE2 binding, serum escape and cell entry'
+aside: false
 author: 
     - Bernadeta Dadonaite
     - Jesse Bloom

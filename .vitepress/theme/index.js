@@ -5,7 +5,9 @@ import Altair from "./Altair.vue";
 import Experiments from "./Experiments.vue";
 import Header from "./Header.vue";
 import vSelect from "vue-select";
+import PinnedExperiments from "./PinnedExperiments.vue";
 import "vue-select/dist/vue-select.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./style.css";
 
 export default {
@@ -19,6 +21,7 @@ export default {
     app.component("Altair", Altair);
     app.component("Experiments", Experiments);
     app.component("Header", Header);
+    app.component("PinnedExperiments", PinnedExperiments);
     app.component("v-select", vSelect);
   },
 };
