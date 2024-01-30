@@ -1,1 +1,0 @@
-import{_ as e,c as s,o as i,U as a}from"./chunks/framework.1NCGK6sV.js";const b=JSON.parse('{"title":"dms-vep.github.io","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),t={name:"README.md"},o=a("",10),n=[o];function l(d,h,p,r,c,g){return i(),s("div",null,n)}const m=e(t,[["render",l]]);export{b as __pageData,m as default};
