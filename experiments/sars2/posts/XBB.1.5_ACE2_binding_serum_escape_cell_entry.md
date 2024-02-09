@@ -20,7 +20,7 @@ keywords:
 
 Study by {{ $frontmatter.author.join(', ') }}, et al. The pre-print for this study is <a v-bind:href="$frontmatter.paper">here</a>.
 
-## Effects of mutations to XBB.1.5 spike on escape from serum antibodies, spike-mediated cell entry, and ACE2 binding
+## Effects of mutations to XBB.1.5 spike on escape from serum antibodies, ACE2-mediated cell entry, and ACE2 binding
 
 Plot below shows how mutations to XBB.1.5 spike affect ACE2 binding, XBB breakthrough sera escape, and ACE2-mediated cell entry. Serum escape data is and average escape of sera from 10 individual with who all had XBB* breakthrough infection. ACE2 binding experiments were done with monomeric ACE2. Cell entry experiments were performed using 293T cells overexpressing ACE2.  
 
