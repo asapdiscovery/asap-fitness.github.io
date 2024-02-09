@@ -16,8 +16,8 @@ features:
     linkText: Env
     icon:
       src: /structures/hiv.png
-  - title: Influenza
-    link: /experiments/influenza/
+  - title: H5N1
+    link: /experiments/h5n1/
     linkText: HA
     icon:
       src: /structures/flu.png
