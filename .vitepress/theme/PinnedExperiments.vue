@@ -7,7 +7,7 @@ const { frontmatter: fm } = useData()
 
 <template>
     <div>
-        <h2 class="section-header">Pinned Experiments</h2>
+        <h2 class="section-header">Key Experiments</h2>
         <div class="template-container">
             <Pins v-if="fm.pins" class="VirusPins" :pins="fm.pins" />
         </div>
