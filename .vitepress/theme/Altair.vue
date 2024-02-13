@@ -11,6 +11,10 @@ export default {
         specUrl: {
             type: String,
             required: true,
+        },
+        showShadow: {
+            type: Boolean,
+            default: true,
         }
     },
 
@@ -65,7 +69,8 @@ export default {
 </script>
 
 <template>
-    <div class="vega-chart-container" ref="vegaContainer" style="width: 100%; height: 100%;">
+    <div class="vega-chart-container" :class="{ 'no-box-shadow': !showShadow }" ref="vegaContainer"
+        style="width: 100%; height: 100%;">
     </div>
 </template>
 
@@ -74,7 +79,10 @@ export default {
     width: 100%;
     height: auto;
     overflow: auto;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     padding: 20px;
+}
+
+.vega-chart-container:not(.no-box-shadow) {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 </style>

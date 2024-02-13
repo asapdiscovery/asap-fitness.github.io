@@ -258,10 +258,12 @@ To add `Altair` plots, you'll need to use a custom syntax and provide a link to 
 To add you're `Altair` plot simply use the following syntax:
 
 ```md
-<Altair :spec-url="'https://raw.githubusercontent.com/dms-vep/SARS-CoV-2_Delta_spike_DMS_REGN10933/main/docs/REGN10933_escape_plot.html'"></Altair>
+<Altair :showShadow="true" :spec-url="'https://raw.githubusercontent.com/dms-vep/SARS-CoV-2_Delta_spike_DMS_REGN10933/main/docs/REGN10933_escape_plot.html'"></Altair>
 ```
 
 Where the `:spec-url` points to either a `JSON` or `HTML` file exported from `Altair`. It's **key** that this file comes from GitHub, and that the URL points to the **raw** data (i.e. the URL starts with `https://raw.githubusercontent`).
+
+You can also toggle whether you want to show ha shadow around your plot by setting `:showShadow` to false (i.e. `:showShadow="false"`).
 
 The result will look something like this:
 
@@ -290,7 +292,3 @@ Which will result in a view of the URL provided to the `src` property of the `if
 </iframe>
 
 You can simply copy this code and replace the URL with the URL to your website of choice.
-
-## Style Guide
-
-In progress...
