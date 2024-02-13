@@ -21,16 +21,22 @@ export default {
     methods: {
         async loadChart(url) {
             try {
+
+                // Get the path to check the file format
+                const urlObj = new URL(url);
+                const path = urlObj.pathname;
+
+                // Get the response from the URL
                 const response = await fetch(url);
                 let spec;
 
                 // Check if URL ends with '.html'
-                if (url.endsWith('.html')) {
+                if (path.endsWith('.html')) {
                     const htmlContent = await response.text();
                     spec = await parseVegaSpecFromHTML(htmlContent);
                 }
                 // Check if URL ends with '.json'
-                else if (url.endsWith('.json')) {
+                else if (path.endsWith('.json')) {
                     spec = await response.json();
                 }
                 else {
