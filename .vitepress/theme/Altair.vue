@@ -83,7 +83,7 @@ export default {
     <div class="vega-chart-container" :class="{ 'expanded': isExpanded, 'no-box-shadow': !showShadow }">
         <div ref="vegaContainer">
         </div>
-        <button @click="toggleExpand" class="expand-btn">
+        <button @click="toggleExpand" @keydown.esc="isExpanded = false" class="expand-btn">
             <i v-if="isExpanded" class="bi bi-arrows-angle-contract"></i>
             <i v-else class="bi bi-arrows-angle-expand"></i>
         </button>
@@ -97,6 +97,7 @@ export default {
     overflow: auto;
     padding: 20px;
     position: relative;
+    background-color: white;
 }
 
 .vega-chart-container:not(.no-box-shadow) {
@@ -111,14 +112,13 @@ export default {
     left: 0;
     z-index: 100;
     padding: 1%;
-    background-color: white;
 }
 
 .expand-btn {
     position: absolute;
     top: 10px;
     right: 10px;
-    /* z-index: 101; */
+    outline: none !important;
     width: 30px;
     height: 30px;
     border-radius: 5px;
