@@ -18,11 +18,18 @@ export default {
         }
     },
 
+    data() {
+        return {
+            isExpanded: false,
+        };
+    },
+
     mounted() {
         this.loadChart(this.specUrl);
     },
 
     methods: {
+        // Parse and load the chart from the URL
         async loadChart(url) {
             try {
 
@@ -53,7 +60,7 @@ export default {
                 console.error('Error loading Vega spec:', error);
             }
         },
-
+        // Render the chart using VegaEmbed
         renderChart(spec) {
             vegaEmbed(this.$refs.vegaContainer, spec, {
                 renderer: 'canvas',
@@ -64,13 +71,22 @@ export default {
                 // Handle the rendered view here (optional)
             }).catch(console.error);
         },
+        // Toggle the expanded view
+        toggleExpand() {
+            this.isExpanded = !this.isExpanded;
+        },
     },
 };
 </script>
 
 <template>
-    <div class="vega-chart-container" :class="{ 'no-box-shadow': !showShadow }" ref="vegaContainer"
-        style="width: 100%; height: 100%;">
+    <div class="vega-chart-container" :class="{ 'expanded': isExpanded, 'no-box-shadow': !showShadow }">
+        <div ref="vegaContainer">
+        </div>
+        <button @click="toggleExpand" class="expand-btn">
+            <i v-if="isExpanded" class="bi bi-arrows-angle-contract"></i>
+            <i v-else class="bi bi-arrows-angle-expand"></i>
+        </button>
     </div>
 </template>
 
@@ -80,9 +96,39 @@ export default {
     height: auto;
     overflow: auto;
     padding: 20px;
+    position: relative;
 }
 
 .vega-chart-container:not(.no-box-shadow) {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.expanded {
+    width: 100vw;
+    height: 100vh;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1%;
+    background-color: white;
+}
+
+.expand-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* z-index: 101; */
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bi {
+    font-size: 20px;
 }
 </style>
