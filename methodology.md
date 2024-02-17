@@ -30,13 +30,13 @@ Panel B of the figure shows how genotype-phenotype linked VEP mutant libraries a
 
 Once the mutant-barcode linkages are determined using long read sequencing, experiments to determine the effects of mutations on the VEP function of entry into cells are straightforward. The mutant virus library is produced from the singly integrated cells in two conditions; one condition with VSV-G added and one condition without VSV-G added. Both pools are used to separately infect susceptible cells, and the change in frequency of the mutants that successfully infect cells between the conditions is used to give each mutant a score on function. These individual mutant scores are then used to deconvolute mutation effects of individual mutations. See the [Modeling the effects of mutations on cell entry](#modeling-the-effects-of-mutations-on-cell-entry) section in the computational methods section below for details on this modeling. 
 
-![Image](./functional_selection.png)
+![Image](/functional_selection.png)
 
 #### Measuring the effects of mutations on escape from neutralization by antibodies or sera  
 
 Experiments to determine the effects of mutations on escape from antibodies or sera use an additional step of spiking in a small amount of separately produced virus only pseudotyped with VSV-G carrying known barcodes in their genomes. The mutant virus library + VSV-G standard spike-in pool is split between mock conditions with no antibody or serum and conditions with varying concentrations of antibodies or sera. Since the VSV-G standards are not neutralized by the antibodies or sera targeting the VEP of interest, the frequency of each mutant can be compared to the frequency of the standards in the mock versus antibody and serum conditions to determine the level of neutralization of each mutant in each condition. These escape scores are then used to fit a biophysical model, where each mutation has an effect on neutralization at one or more epitopes for each antibody or serum. See the [Modeling the effects of mutations on escape from antibodies and sera](#modeling-the-effects-of-mutations-on-escape-from-antibodies-and-sera) section in the computational methods section below for details on this modeling. 
 
-![Image](./antibody_selection.png)
+![Image](/antibody_selection.png)
 
 #### Measuring the effects of mutations on receptor binding 
 
