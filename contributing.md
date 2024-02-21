@@ -292,3 +292,23 @@ Which will result in a view of the URL provided to the `src` property of the `if
 </iframe>
 
 You can simply copy this code and replace the URL with the URL to your website of choice.
+
+### Adding figure captions
+
+If you want to add captions to images, iframes, or Altair plots, you can do so with the following syntax:
+
+For images, you specify either the path to the image or the image URL to the `imageSrc` argument. You specify the caption to the `caption` argument.
+
+```md
+<Figure imageSrc="./antibody_selection.png" caption="This is an example of  a caption for this image" />
+```
+
+<Figure imageSrc="./antibody_selection.png" caption="This is an example of  a caption for this image" />
+
+The only difference between Altair plots (and other HTML elements) and images is that you **don't** use the `imageSrc` argument. Instead, you *wrap* the element in the `Figure` element like below:
+
+```md
+<Figure caption="This is an example of  a caption for this image">
+    <Altair :spec-url="'https://raw.githubusercontent.com/dms-vep/SARS-CoV-2_Omicron_BA.2_spike_ACE2_binding/main/docs/htmls/monomeric_ACE2_mut_effect.html'"></Altair>
+</Figure>
+```
