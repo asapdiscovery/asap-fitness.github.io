@@ -17,7 +17,7 @@ export default {
       const columns = this.contributors.length;
       return {
         'grid-template-columns': `repeat(auto-fit, minmax(150px, 1fr))`,
-        'max-width': `${150 * columns}px`
+        'max-width': `${210 * columns}px`
       };
     }
   }
@@ -28,10 +28,11 @@ export default {
   <div class="contributors-container">
     <h2>Contributors</h2>
     <div class="grid-container" :style="gridStyle">
-      <div v-for="contributor in contributors" :key="contributor.name" class="contributor">
+      <a v-for="contributor in contributors" :key="contributor.name" :href="contributor.link" target="_blank"
+        class="contributor">
         <img :src="contributor.image" :alt="contributor.name" class="contributor-image">
         <div class="contributor-name">{{ contributor.name }}</div>
-      </div>
+      </a>
     </div>
   </div>
 </template>

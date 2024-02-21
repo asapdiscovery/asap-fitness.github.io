@@ -1,30 +1,22 @@
 [
     {
         "name": "Jesse Bloom",
-        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember/image.img.jpg/1540125095310.jpg"
+        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember/image.img.jpg/1540125095310.jpg",
+        "link": "https://research.fredhutch.org/bloom/en/members.html"
     },
     {
         "name": "Bernadeta Dadonaite",
-        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember_1939500834/image.img.jpg/1657559048742.jpg"
+        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember_1939500834/image.img.jpg/1657559048742.jpg",
+        "link": "https://research.fredhutch.org/bloom/en/members.html"
     },
     {
         "name": "Caelan Radford",
-        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember_1830037644/image.img.jpg/1696888745651.jpg"
+        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember_1830037644/image.img.jpg/1696888745651.jpg",
+        "link": "https://research.fredhutch.org/bloom/en/members.html"
     },
     {
-        "name": "Brendan Larsen",
-        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember_1083259124/image.img.jpg/1635264555851.jpg"
-    },
-    {
-        "name": "Caleb Carr",
-        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember_965242551/image.img.jpg/1635439221241.jpg"
-    },
-    {
-        "name": "Frances Welsh",
-        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember_250798615/image.img.jpg/1598902331732.jpg"
-    },
-    {
-        "name": "Tim Yu",
-        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember_1874078203/image.img.png/1635439265387.png"
+        "name": "Will Hannon",
+        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember_13944287/image.img.png/1598649957719.png",
+        "link": "https://willhannon.com/"
     }
 ]

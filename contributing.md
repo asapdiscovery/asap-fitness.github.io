@@ -135,17 +135,19 @@ Then your write-up goes here...
 
 Ensure that **every write-up contains the headers listed above**. These pieces of metadata will appear in the index of experiments for a given virus. The `title` will appear as the title, the `subtext` will appear as a description below the title, and the `keywords` are used to filter the write-ups listed in the index.
 
-Finally, if this is your first time contributing to `dms-vep.github.io`, make sure to update the `public/contributors.json` file with your name and a link to a photo:
+Finally, if this is your first time contributing to `dms-vep.github.io`, make sure to update the `public/contributors.json` file with your name, a link to a photo, and a link to your personal or lab website:
 
 ```json
 [
     {
         "name": "Jesse Bloom",
-        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember/image.img.jpg/1540125095310.jpg"
+        "image": "https://research.fredhutch.org/content/stripe/bloom/en/members/_jcr_content/par/labmember/image.img.jpg/1540125095310.jpg",
+        "link": "https://research.fredhutch.org/bloom/en/members.html"
     },
     {
         "name": "Your Name",
-        "image": "https://my/awesome/photo.jpg"
+        "image": "https://my/awesome/photo.jpg",
+        "link": "https://my-personal-webiste.com"
     },
     ...
 ```
