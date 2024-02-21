@@ -18,23 +18,9 @@ export default {
         const { frontmatter } = useData();
         const selectedKeywords = ref([]);
         const collapsed = ref(true);
-        const allKeywords = computed(() => {
-            const keywords = new Set();
-            postsData.forEach(post => {
-                if (post.keywords) {
-                    post.keywords.forEach(keyword => keywords.add(keyword));
-                }
-            });
-            return Array.from(keywords);
-        });
-        const toggleVisibility = () => {
-            // Toggle the value of the 'collapsed' variable when the button is clicked
-            collapsed.value = !collapsed.value;
-        };
 
         const filteredPosts = computed(() => {
             const currentDirectory = props.currentDirectory;
-            console.log(currentDirectory);
 
             return postsData.filter(post => {
                 const parentDirectory = post.url.split('/').slice(-3, -2)[0];
@@ -44,12 +30,28 @@ export default {
 
                 return isInCurrentDirectory && hasSelectedKeywords;
             });
+
         });
+
+        const filteredKeywords = computed(() => {
+            const keywords = new Set();
+            filteredPosts.value.forEach(post => {
+                if (post.keywords) {
+                    post.keywords.forEach(keyword => keywords.add(keyword));
+                }
+            });
+            return Array.from(keywords);
+        });
+
+        const toggleVisibility = () => {
+            // Toggle the value of the 'collapsed' variable when the button is clicked
+            collapsed.value = !collapsed.value;
+        };
 
         return {
             frontmatter,
             selectedKeywords,
-            allKeywords,
+            filteredKeywords,
             filteredPosts,
             currentDirectory: props.currentDirectory,
             collapsed,
@@ -99,7 +101,7 @@ export default {
             </svg>
         </button>
         <div v-if="!collapsed">
-            <v-select class="mt-4" v-model="selectedKeywords" :options="allKeywords" multiple
+            <v-select class="mt-4" v-model="selectedKeywords" :options="filteredKeywords" multiple
                 placeholder="Filter experiments by keywords">
             </v-select>
             <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
