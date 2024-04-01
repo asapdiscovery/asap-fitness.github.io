@@ -265,7 +265,15 @@ To add you're `Altair` plot simply use the following syntax:
 
 Where the `:spec-url` points to either a `JSON` or `HTML` file exported from `Altair`. It's **key** that this file comes from GitHub, and that the URL points to the **raw** data (i.e. the URL starts with `https://raw.githubusercontent`).
 
-You can also toggle whether you want to show ha shadow around your plot by setting `:showShadow` to false (i.e. `:showShadow="false"`).
+:::tip Note
+You can provide a path to a local file as well. Place the HTML file in a subdirectory of `public/` (i.e. `public/htmls/`). **Don't** include `public` in the path. Also, make sure to have a leading `/` in the path. For example: 
+```bash
+/htmls/path-to-my-altair-plot.html
+```
+:::
+
+
+You can also toggle whether you want to show a shadow around your plot by setting `:showShadow` to false (i.e. `:showShadow="false"`).
 
 The result will look something like this:
 

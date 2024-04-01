@@ -32,33 +32,44 @@ export default {
         // Parse and load the chart from the URL
         async loadChart(url) {
             try {
-
-                // Get the path to check the file format
-                const urlObj = new URL(url);
-                const path = urlObj.pathname;
-
-                // Get the response from the URL
-                const response = await fetch(url);
                 let spec;
-
-                // Check if URL ends with '.html'
-                if (path.endsWith('.html')) {
-                    const htmlContent = await response.text();
+                // Determine if the URL is local or remote
+                if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                    const htmlContent = await this.fetchLocalFile(url);
                     spec = await parseVegaSpecFromHTML(htmlContent);
-                }
-                // Check if URL ends with '.json'
-                else if (path.endsWith('.json')) {
-                    spec = await response.json();
-                }
-                else {
-                    console.error('Unsupported file format');
-                    return;
-                }
+                } else {
 
+                    // Get the path to check the file format
+                    const urlObj = new URL(url);
+                    const path = urlObj.pathname;
+                    // Get the response from the URL
+                    const response = await fetch(url);
+
+                    // Check if URL ends with '.html'
+                    if (path.endsWith('.html')) {
+                        const htmlContent = await response.text();
+                        spec = await parseVegaSpecFromHTML(htmlContent);
+                    }
+                    // Check if URL ends with '.json'
+                    else if (path.endsWith('.json')) {
+                        spec = await response.json();
+                    }
+                    else {
+                        console.error('Unsupported file format');
+                        return;
+                    }
+                }
                 this.renderChart(spec);
             } catch (error) {
                 console.error('Error loading Vega spec:', error);
             }
+        },
+        // Fetch the text from local files
+        async fetchLocalFile(filePath) {
+            const response = await fetch(filePath);
+            if (!response.ok) throw new Error('Failed to fetch local file');
+            console.log('response.text()', response);
+            return await response.text();
         },
         // Render the chart using VegaEmbed
         renderChart(spec) {
