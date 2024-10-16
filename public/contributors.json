@@ -1,27 +1,7 @@
 [
     {
-        "name": "Jesse Bloom",
-        "image": "https://jbloomlab.org/assets/people/jesse-bloom.jpg",
-        "link": "https://jbloomlab.org/people/jesse-bloom.html"
-    },
-    {
-        "name": "Bernadeta Dadonaite",
-        "image": "https://jbloomlab.org/assets/people/bernadeta-dadonaite.jpg",
-        "link": "https://jbloomlab.org/people/bernadeta-dadonaite.html"
-    },
-    {
-        "name": "Caelan Radford",
-        "image": "https://jbloomlab.org/assets/people/caelan-radford.jpg",
-        "link": "https://jbloomlab.org/people/caelan-radford.html"
-    },
-    {
         "name": "Will Hannon",
         "image": "https://jbloomlab.org/assets/people/will-hannon.jpg",
         "link": "https://willhannon.com/"
-    },
-    {
-        "name": "Caleb Carr",
-        "image": "https://jbloomlab.org/assets/people/caleb-carr.jpg",
-        "link": "https://jbloomlab.org/people/caleb-carr.html"
     }
 ]

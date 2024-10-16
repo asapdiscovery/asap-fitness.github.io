@@ -2,25 +2,24 @@
 layout: doc
 aside: false
 dir: 'sars2'
-title: SARS-CoV-2
-subtext: Deep mutational scanning of the SARS-CoV-2 spike.
+title: SARS-CoV-2 Mpro
+subtext: Fitness experiments and visualizations on SARS-CoV-2 Mpro.
 pins:
   - title: Serum escape, ACE2 binding and ACE2-mediated cell entry
     details: Effects of mutations to XBB.1.5 spike on serum escape, ACE2 binding and ACE2-mediated cell entry measured using lentiviral deep mutational scanning
     link: /experiments/sars2/posts/XBB.1.5_ACE2_binding_serum_escape_cell_entry
-    linkText: Click here!
 ---
 
 <Header :title="$frontmatter.title" :description="$frontmatter.subtext" /> 
 
-<PinnedExperiments />
 
-<!-- Edit below -->
 
-## SARS-CoV-2 lentiviral deep mutational scanning datasets
+## Fitness data for this target
 
-The pinned posts above include the most up to date data on the effects of mutations on various SARS-CoV-2 spike phenotypes. For datasets related to other studies using lentiviral deep mutational scanning system for spike see experiments section below.
+For an interactive view of fitness data, see [the Bloom lab interactive viewer of phylogenetic estimated fitness](https://jbloomlab.github.io/SARS2-mut-fitness/nsp5.html). For raw source data to reproduce this analysis, see [here](https://github.com/jbloomlab/SARS2-mut-fitness).
 
-<!-- Stop editing -->
+## Fitness views 
 
-<Experiments :currentDirectory="$frontmatter.dir" />
+[ASAP-0002631](https://asap-discovery-demo-files.asapdata.org/demo_mac1/out_3dmol_fitness.html)
+
+
